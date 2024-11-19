@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ランダム画像表示</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        img {
+            max-width: 90%;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ランダム画像を表示します</h1>
+    <p>以下の画像はランダムに選ばれたものです。</p>
+    <img id="randomImage" src="" alt="ランダム画像">
+    <script>
+        // Imgurの直接画像リンクリスト
+        const images = [
+            'https://i.imgur.com/nHZuRCH.jpg', // レベル1
+            'https://i.imgur.com/zwEJGSN.jpg', // レベル2
+            'https://i.imgur.com/36SjDu5.jpg', // レベル3
+            'https://i.imgur.com/QOQ5gem.jpg', // レベル4
+            'https://i.imgur.com/S4S6lcF.jpg'  // レベル5
+        ];
+
+        // ランダムに画像を選択
+        const randomIndex = Math.floor(Math.random() * images.length);
+        const randomImage = images[randomIndex];
+
+        // HTMLに画像を表示
+        document.getElementById("randomImage").src = randomImage;
+    </script>
+</body>
+</html>
